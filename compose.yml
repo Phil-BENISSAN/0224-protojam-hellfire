@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+
+# DATABASE
+  # mysql-database:
+  #   image: mysql/mysql-server:8.0.32
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #   ports:
+  #     - target: 3306
+  #       published: 3306
+  #       protocol: tcp
+  #   restart: always  
+
+# FASTAPI
+  data-fastapi:
+    build:
+      context: ./data-fastapi
+    # depends_on:
+    #   mysql-database:
+    #     condition: service_healthy
+    volumes:
+      - ./data:/app/fastapi
+    tty: true
+    ports:
+      # HTTP
+      - target: 8000
+        published: 8000
+        protocol: tcp        
+
+# STREAMLIT
+  data-streamlit:
+    build:
+      context: ./data-streamlit
+    # depends_on:
+    #   mysql-database:
+    #     condition: service_healthy
+    volumes:
+      - ./data:/app/streamlit
+    tty: true
+    ports:
+      # HTTP
+      - target: 8501
+        published: 8501
+        protocol: tcp

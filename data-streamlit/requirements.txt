@@ -1,0 +1,19 @@
+# API
+simplejson
+requests
+
+# DATAVIZ
+matplotlib
+plotly
+seaborn
+
+# FRAMEWORKS
+dash
+dash_bootstrap_components
+streamlit
+
+# MACHINE LEARNING
+scikit-learn
+
+# SQL
+SQLAlchemy
