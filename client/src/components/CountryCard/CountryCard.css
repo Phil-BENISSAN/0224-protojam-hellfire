@@ -1,29 +1,35 @@
 body {
   background-color: gray;
-  color : #F2F4E7
+  color: #f2f4e7;
 }
 
 .countryCardMain {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: end;
-  padding: 6rem 0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 7rem 1rem 3rem 1rem;
 }
 
 .countryCard {
-  height: 10rem;
+  display: flex;
+  height: 20rem;
+  min-width: 100%;
+  max-width: 20rem;
+  position: relative;
+  border-radius: 30px;
   background-color: rgb(0, 0, 0);
   background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 45%,
-    rgba(0, 0, 0, 1) 100%
-  ),
-  url("https://nomadlist.com/cdn-cgi/image/format=auto,fit=cover,width=600,height=300,quality=75/https://nomadlist.com/assets/img/places/bangkok-thailand.jpg?1705449619");
+      180deg,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("https://nomadlist.com/cdn-cgi/image/format=auto,fit=cover,width=600,height=300,quality=75/https://nomadlist.com/assets/img/places/bangkok-thailand.jpg?1705449619");
 }
 
 .countryTitle {
   display: inline-block;
-  text-align: end;
+  align-self: end;
 }
 
 .countryInfoHidden {
@@ -33,29 +39,36 @@ body {
 .countryInfoVisible {
   display: flex;
   flex-wrap: wrap;
-  width: 14rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   animation: entranceInfo 0.15s ease-in-out 0s 1 normal forwards;
-row-gap: 1rem;
+  row-gap: 1rem;
+  border-radius: 30px;
 }
-
+label {
+  width: 35%;
+  text-align: center;
+  margin-top: 1.5rem;
+}
 progress {
-  width: 45%;
+  width: 60%;
   height: auto;
   margin-left: 0.4rem;
   margin-top: -6px;
 }
 
 @keyframes entranceInfo {
-	0% {
-		opacity: 0;
-		transform: translateY(50px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 button {
@@ -63,4 +76,25 @@ button {
   width: 10rem;
   height: 2.5rem;
   background-color: #527536;
+}
+
+@media screen and (min-width: 768px) {
+  .countryCardMain {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 8rem 2rem 3rem 2rem;
+  }
+  .countryCard {
+    height: 20rem;
+    max-width: 35rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .countryCardMain {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8rem 3rem 3rem 3rem;
+  }
+  .countryCard {
+    height: 20rem;
+  }
 }

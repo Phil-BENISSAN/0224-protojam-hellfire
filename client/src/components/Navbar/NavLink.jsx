@@ -1,7 +1,9 @@
-export function Navlink() {
+import { Link } from "react-router-dom";
+
+export function Navlink({ linkTo, text }) {
   return (
-    <main>
-      <p>navlink </p>
-    </main>
+    <Link to={linkTo} className="navLink">
+      {text}
+    </Link>
   );
 }

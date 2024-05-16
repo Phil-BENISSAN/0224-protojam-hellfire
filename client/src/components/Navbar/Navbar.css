@@ -1,18 +1,51 @@
 nav {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 6rem;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 0 1rem;
+  gap: 0.5rem;
+  background-color: var(--);
 }
 
 .navLink {
-    background-color: var(--secondaryColor);
-    border-radius: 10px;
-    font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondaryColor);
+  color: var(--lightText);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  height: 3rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
 }
 
 .navLogo {
-    width: clamp(3rem, 4vw, 6rem);
+  width: clamp(3rem, 5vw, 6rem);
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    padding: 0 2rem;
+  }
+
+  .navLink {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  nav {
+    padding: 0 3rem;
+  }
+
+  .navLink {
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+  }
 }
