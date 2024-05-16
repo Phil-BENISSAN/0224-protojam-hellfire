@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./CountryCard.css";
 import { Link } from "react-router-dom";
 
 const CountryCard = ({

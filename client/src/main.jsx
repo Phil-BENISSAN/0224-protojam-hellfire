@@ -3,8 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import AllCountries from "./views/AllCountries.jsx";
-import { Country } from "./views/Country.jsx";
+import { AllCountries } from "./views/AllCountries/AllCountries.jsx";
+import { Country } from "./views/Country/Country.jsx";
+
+const getData = () => {
+  return { datatest: "test" };
+};
 
 const router = createBrowserRouter([
   {
@@ -16,8 +20,9 @@ const router = createBrowserRouter([
         element: <AllCountries />,
       },
       {
-        path: "countries/:country",
+        path: "/country",
         element: <Country />,
+        loader: () => getData(),
       },
     ],
   },

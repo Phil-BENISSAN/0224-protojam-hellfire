@@ -1,8 +1,9 @@
-import CountryCard from "../components/CountryCard/CountryCard";
+import CountryCard from "../../components/CountryCard";
+import "./AllCountries.css";
 
-const App = () => {
+export function AllCountries() {
   return (
-    <main className="countryCardMain">
+    <main className="AllCountriesMain">
       <CountryCard
         countryName="COUNTRY_NAME1"
         countryInfo1="country_info1"
@@ -23,6 +24,4 @@ const App = () => {
       />
     </main>
   );
-};
-
-export default App;
+}

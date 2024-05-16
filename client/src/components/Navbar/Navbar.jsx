@@ -3,8 +3,6 @@ import { Navlink } from "./NavLink";
 import "./Navbar.css";
 
 export function Navbar({ location }) {
-  console.log(location);
-
   return (
     <nav>
       <Link to={"https://senior-sanctuary.webflow.io/"} className="navLogo">
