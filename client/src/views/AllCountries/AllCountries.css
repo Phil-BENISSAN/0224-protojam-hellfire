@@ -11,6 +11,7 @@ body {
   padding: 7rem 1rem 3rem 1rem;
   gap: 2rem;
 }
+
 .countryCard {
   display: flex;
   justify-content: center;
@@ -51,11 +52,13 @@ body {
   color: var(--lightText);
   cursor: pointer;
 }
+
 label {
   width: 35%;
   text-align: center;
   margin-top: 1.5rem;
 }
+
 progress {
   width: 60%;
   height: auto;
@@ -75,19 +78,18 @@ progress {
   }
 }
 
-button {
+.hoverInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto 0 auto;
   width: 10rem;
   height: 2.5rem;
   background-color: #287d48;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: larger;
   color: var(--lightText);
-}
-
-button:hover {
-  background-color: #44612d;
 }
 
 @media screen and (min-width: 768px) {
@@ -106,6 +108,7 @@ button:hover {
     grid-template-columns: repeat(3, 1fr);
     padding: 8rem 3rem 3rem 3rem;
   }
+
   .countryCard {
     height: 20rem;
   }

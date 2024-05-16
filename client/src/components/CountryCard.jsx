@@ -28,7 +28,7 @@ const CountryCard = ({
         <progress id="info2" max="5" value="2.5" />
         <label htmlFor="info3">{countryInfo3} :</label>
         <progress id="info3" max="5" value="4" />
-        <button>Tap to open</button>
+        <p className="hoverInfo">Tap to open</p>
       </Link>
       <h2 className="countryTitle">{countryName}</h2>
     </article>

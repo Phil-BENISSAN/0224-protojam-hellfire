@@ -17,6 +17,7 @@ export function Navbar({ location }) {
       <Navlink
         linkTo="https://senior-sanctuary.webflow.io/"
         text="Back to homepage"
+        isRight={true}
       />
     </nav>
   );

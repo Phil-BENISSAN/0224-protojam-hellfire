@@ -1,30 +1,46 @@
 import { useLoaderData } from "react-router-dom";
+import "./Country.css";
+import CountryCard from "../../components/CountryCard";
 
 export function Country() {
-  const { image, name, description, countryInfo1, countryInfo2, countryInfo3 } =
-    useLoaderData();
+  const {
+    image,
+    name,
+    description,
+    countryInfo1,
+    countryInfo2,
+    countryInfo3,
+    datatest,
+  } = useLoaderData();
   return (
-    <main className="CountryMain">
-      <img src={image} alt={`${name}-image`} />
-      <h1>{name} France</h1>
-      <section className="dataCard">
-        <h2>Country Information</h2>
-        <ul>
-          <li>
-            <label htmlFor="info1">{countryInfo1} :</label>
-            <progress id="info1" max="5" value="1" />
-          </li>
-          <li>
-            <label htmlFor="info2">{countryInfo2} :</label>
-            <progress id="info2" max="5" value="3" />
-          </li>
-          <li>
-            <label htmlFor="info3">{countryInfo3} :</label>
-            <progress id="info3" max="5" value="2.5" />
-          </li>
-        </ul>
+    <main className="countryMain">
+      <header className="countryHeader">
+        <img
+          src="./src/assets/images/backgroundmontain.webp"
+          alt={`${name}-image`}
+        />
+        <h1>{name}France</h1>
+      </header>
+      <section className="dataCardSection">
+        <div className="dataCard">
+          <h2>Country Information</h2>
+          <ul>
+            <li>
+              <label htmlFor="info1">{countryInfo1}Value :</label>
+              <progress id="info1" max="5" value="1" />
+            </li>
+            <li>
+              <label htmlFor="info2">{countryInfo2}Value :</label>
+              <progress id="info2" max="5" value="3" />
+            </li>
+            <li>
+              <label htmlFor="info3">{countryInfo3}Value :</label>
+              <progress id="info3" max="5" value="2.5" />
+            </li>
+          </ul>
+        </div>
       </section>
-      <section>
+      <section className="descriptionSection">
         <p>
           {description} Lorem ipsum dolor sit, amet consectetur adipisicing
           elit. Quaerat architecto accusantium provident officia recusandae fuga
@@ -40,7 +56,21 @@ export function Country() {
           eligendi saepe. Inventore?
         </p>
       </section>
-      <button className="nav">Check Similar Countries</button>
+      <section className="similarCountrySection">
+        <h2 className="similarCountryTitle">Similar Countries</h2>
+        <CountryCard
+          countryName="COUNTRY_NAME1"
+          countryInfo1="country_info1"
+          countryInfo2="country_info2"
+          countryInfo3="country_info3"
+        />
+        <CountryCard
+          countryName="COUNTRY_NAME2"
+          countryInfo1="country_info1"
+          countryInfo2="country_info2"
+          countryInfo3="country_info3"
+        />
+      </section>
     </main>
   );
 }
