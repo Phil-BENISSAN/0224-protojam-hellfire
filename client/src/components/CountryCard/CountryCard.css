@@ -1,6 +1,6 @@
 body {
-  background-color: gray;
-  color: #f2f4e7;
+  background-color: var(--lightText);
+  color: var(--lightText);
 }
 
 .countryCardMain {
@@ -12,6 +12,7 @@ body {
 }
 .countryCard {
   display: flex;
+  justify-content: center;
   height: 20rem;
   min-width: 100%;
   max-width: 20rem;
@@ -45,6 +46,9 @@ body {
   animation: entranceInfo 0.15s ease-in-out 0s 1 normal forwards;
   row-gap: 1rem;
   border-radius: 30px;
+  text-decoration: none;
+  color: var(--lightText);
+  cursor: pointer;
 }
 label {
   width: 35%;
@@ -71,10 +75,18 @@ progress {
 }
 
 button {
-  margin: auto;
+  margin: 0 auto 0 auto;
   width: 10rem;
   height: 2.5rem;
-  background-color: #527536;
+  background-color: #287d48;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: larger;
+  color: var(--lightText);
+}
+
+button:hover {
+  background-color: #44612d;
 }
 
 @media screen and (min-width: 768px) {
