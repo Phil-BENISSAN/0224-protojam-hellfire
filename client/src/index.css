@@ -4,7 +4,12 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url(./src/assets/fonts/Roboto-Regular.ttf) format("truetype");
+  src: url("./src/assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url("client/src/assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 * {
@@ -19,4 +24,5 @@
   --darkText: #1d3853;
   --lightText: #f2f4e7;
   --font: "Roboto", sans-serif;
+  --fontBold: "RobotoBold", sans-serif;
 }

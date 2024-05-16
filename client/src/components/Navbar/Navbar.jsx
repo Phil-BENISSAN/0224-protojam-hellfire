@@ -3,6 +3,8 @@ import { Navlink } from "./NavLink";
 import "./Navbar.css";
 
 export function Navbar({ location }) {
+  console.log(location);
+
   return (
     <nav>
       <Link to={"https://senior-sanctuary.webflow.io/"} className="navLogo">
@@ -11,7 +13,7 @@ export function Navbar({ location }) {
           alt="Logo Senior Sanctuary"
         />
       </Link>
-      {location.endsWith("coutries") ? null : (
+      {location.endsWith("/countries") ? null : (
         <Navlink linkTo="/countries" text="Back to all countries" />
       )}
       <Navlink

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CountryCard.css";
+import { Link } from "react-router-dom";
 
 const CountryCard = ({
   countryName,
@@ -18,7 +19,8 @@ const CountryCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <section
+      <Link
+        to="countries/:country"
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
         <label htmlFor="info1">{countryInfo1} :</label>
@@ -28,7 +30,7 @@ const CountryCard = ({
         <label htmlFor="info3">{countryInfo3} :</label>
         <progress id="info3" max="5" value="4" />
         <button>Tap to open</button>
-      </section>
+      </Link>
       <h2 className="countryTitle">{countryName}</h2>
     </article>
   );
