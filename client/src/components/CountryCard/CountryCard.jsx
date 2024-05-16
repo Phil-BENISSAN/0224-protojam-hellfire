@@ -19,8 +19,7 @@ const CountryCard = ({
       className="countryCard"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-    >
-      <h2 className="countryTitle">{countryName}</h2>
+      >
       <section
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
@@ -32,6 +31,7 @@ const CountryCard = ({
         <progress id="info3" max="5" value="4" />
         <button>Tap to open</button>
       </section>
+      <h2 className="countryTitle">{countryName}</h2>
     </article>
   );
 };
