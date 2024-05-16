@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -8,11 +8,11 @@ import { Country } from "./views/Country.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/dashboard",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "/dashboard/countries",
+        path: "/countries",
         element: <AllCountries />,
       },
       {

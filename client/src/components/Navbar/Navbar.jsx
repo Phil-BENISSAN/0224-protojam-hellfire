@@ -1,10 +1,21 @@
+import { Link } from "react-router-dom";
 import { Navlink } from "./NavLink";
+import "./Navbar.css"
 
-export function Navbar() {
+export function Navbar({location}) {
+
   return (
-    <main>
-      <p>Navbar</p>
-      <Navlink />
-    </main>
+    <nav>
+      <Link to={"https://senior-sanctuary.webflow.io/"}
+      className="navLogo">
+        <img 
+        src="./src/assets/images/256logo.svg" 
+        alt="Logo Senior Sanctuary" 
+        />
+    </Link>
+      {location.endsWith("coutries") ? null : <Navlink linkTo="/countries"/> } 
+      <Navlink linkTo="https://senior-sanctuary.webflow.io/"/>
+    </nav>
   );
 }
+

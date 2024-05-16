@@ -1,4 +1,3 @@
-import React from 'react';
 import CountryCard from "../components/CountryCard/CountryCard";
 
 const App = () => {
