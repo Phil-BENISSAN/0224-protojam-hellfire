@@ -1,8 +1,10 @@
 import CountryCard from "../../components/CountryCard";
 import "./AllCountries.css";
 import React from "react";
+import data from "../../data.json"
 
 export function AllCountries() {
+  
   return (
     <>
       <main>
@@ -28,25 +30,16 @@ export function AllCountries() {
             </select>
           </section>
         </section>
-        <section className="countryCardMain">
-          <CountryCard
-            countryName="COUNTRY_NAME1"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
+        <section className="country-list">
+      {data.map((data, index) => (
+        <CountryCard
+          key={index}
+          countryName={data.country}
+          countryInfo1={data.countryInfo1}
+          countryInfo2={data.countryInfo2}
+          countryInfo3={data.air_polution}
           />
-          <CountryCard
-            countryName="COUNTRY_NAME2"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
-          />
-          <CountryCard
-            countryName="COUNTRY_NAME3"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
-          />
+        ))}
         </section>
       </main>
     </>
