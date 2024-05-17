@@ -117,6 +117,10 @@ export function Country() {
             <label htmlFor="info6">Average Temperature:</label>
             <span id="info6">{Math.floor(country.avg_temperature)}°C</span>
           </li>
+          <li>
+            <label htmlFor="info6">Average Life cost:</label>
+            <span id="info6">{country.affordability}</span>
+          </li>
         </ul>
       </section>
       <section className="descriptionSection">
