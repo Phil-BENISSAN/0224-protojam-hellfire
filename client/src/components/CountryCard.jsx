@@ -20,11 +20,7 @@ const CountryCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
-        backgroundImage: `linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 45%,
-          rgba(0, 0, 0, 1) 100%
-        ), url(${countryImg})`,
+        backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%), url(${countryImg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

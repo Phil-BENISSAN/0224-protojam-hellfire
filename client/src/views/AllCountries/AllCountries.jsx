@@ -7,9 +7,22 @@ export function AllCountries() {
   const [search, setSearch] = useState("");
 
   let filteredCountries = data.filter((country) =>
-    country.country.toLowerCase().includes(search.toLowerCase())
-  );
+    country.country.toLowerCase().includes(search)).sort((a, b) => parseInt(b.hapiness_index) - parseInt(a.hapiness_index))
 
+  const [sortCriteria, setSortCriteria] = useState("indice-bonheur");
+
+  const sortedCountries = filteredCountries.sort((a, b) => {
+    switch (sortCriteria) {
+      case "indice-bonheur":
+        return b.hapiness_index - a.hapiness_index;
+      case "air-quality":
+        return b.cost_of_living - a.cost_of_living;
+      case "acces-sante":
+        return b.average_temperature - a.average_temperature;
+      default:
+        return a.country.localeCompare(b.country);
+    }
+  });
 
   let mapAirPollution = (level) => {
     const levels = {
@@ -43,6 +56,8 @@ export function AllCountries() {
             <select
               id="filtre"
               name="filtre-options"
+              value={sortCriteria}
+              onChange={(e) => setSortCriteria(e.target.value)}
             >
               <option value="indice-bonheur">Hapiness level</option>
               <option value="acces-sante">Health care acces</option>

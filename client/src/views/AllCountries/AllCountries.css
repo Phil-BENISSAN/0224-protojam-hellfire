@@ -19,17 +19,13 @@ body {
   position: relative;
   border-radius: 30px;
   background-color: rgb(0, 0, 0);
-  background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 45%,
-      rgba(0, 0, 0, 1) 100%
-    ),
-    url("https://nomadlist.com/cdn-cgi/image/format=auto,fit=cover,width=600,height=300,quality=75/https://nomadlist.com/assets/img/places/bangkok-thailand.jpg?1705449619");
 }
 
 .countryTitle {
   display: inline-block;
-  align-self: end;
+  align-self: center;
+  font-weight: bolder;
+  font-size: 2rem;
 }
 
 .countryInfoHidden {
@@ -58,10 +54,11 @@ article label {
 }
 
 article progress {
-  width: 60%;
+  width: 50%;
   height: auto;
   margin-left: 0.4rem;
   margin-top: -6px;
+  margin-right: 0.3rem;
 }
 
 @keyframes entranceInfo {
@@ -76,10 +73,14 @@ article progress {
   }
 }
 
-button {
+.hoverInfo {
+  display: flex;
   margin: 0 auto 0 auto;
+  justify-content: center;
+  align-items: center;
   width: 10rem;
-  height: 2.5rem;
+  height: 2rem;
+  align-self: center;
   background-color: #287d48;
   text-decoration: none;
   border-radius: 5px;
@@ -87,7 +88,7 @@ button {
   color: var(--lightText);
 }
 
-button:hover {
+.hoverInfo:hover {
   background-color: #44612d;
 }
 
