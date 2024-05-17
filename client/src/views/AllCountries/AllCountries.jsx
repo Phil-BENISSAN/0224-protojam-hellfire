@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import CountryCard from "../../components/CountryCard";
 import "./AllCountries.css";
 import React from "react";
 
 export function AllCountries() {
+  const { country } = useLoaderData();
+
   return (
     <>
       <main>
