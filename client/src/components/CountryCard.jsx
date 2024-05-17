@@ -8,6 +8,7 @@ const CountryCard = ({
   countryInfo2,
   countryInfo3,
   countryImg,
+  id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -21,12 +22,12 @@ const CountryCard = ({
       onMouseLeave={handleMouseLeave}
       style={{
         backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%), url(${countryImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <Link
-        to="/countries/:country"
+        to={`/countries/${id}`}
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
         <label htmlFor="info1">Hapiness level :</label>

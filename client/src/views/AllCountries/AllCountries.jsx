@@ -6,8 +6,9 @@ import "./AllCountries.css";
 export function AllCountries() {
   const [search, setSearch] = useState("");
 
-  let filteredCountries = data.filter((country) =>
-    country.country.toLowerCase().includes(search)).sort((a, b) => parseInt(b.hapiness_index) - parseInt(a.hapiness_index))
+  let filteredCountries = data
+    .filter((country) => country.country.toLowerCase().includes(search))
+    .sort((a, b) => parseInt(b.hapiness_index) - parseInt(a.hapiness_index));
 
   const [sortCriteria, setSortCriteria] = useState("indice-bonheur");
 
@@ -67,9 +68,10 @@ export function AllCountries() {
           </section>
         </section>
         <section className="countryCardMain">
-        {filteredCountries.map((data) => (
+          {filteredCountries.map((data) => (
             <CountryCard
               key={data.id}
+              id={data.id}
               countryName={data.country}
               countryInfo1={data.hapiness_index}
               countryInfo2={data.dencity_of_doctors}

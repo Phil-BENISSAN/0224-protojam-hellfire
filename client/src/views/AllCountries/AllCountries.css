@@ -88,10 +88,6 @@ article progress {
   color: var(--lightText);
 }
 
-.hoverInfo:hover {
-  background-color: #44612d;
-}
-
 @media screen and (min-width: 768px) {
   .countryCardMain {
     grid-template-columns: repeat(2, 1fr);

@@ -5,7 +5,7 @@ import React from "react";
 
 export function Country() {
   const countries = useLoaderData();
-  const { countryId } = useParams();
+  const countryId = useParams().country;
 
   console.log(countryId);
 
@@ -133,12 +133,16 @@ export function Country() {
           countryInfo1={similarCountry1.hapiness_index}
           countryInfo2={mapAirPollution(similarCountry1.air_polution)}
           countryInfo3={similarCountry1.dencity_of_doctors}
+          countryImg={similarCountry1.img_link_country}
+          id={similarCountry1.id}
         />
         <CountryCard
           countryName={similarCountry2.country}
           countryInfo1={similarCountry2.hapiness_index}
           countryInfo2={mapAirPollution(similarCountry2.air_polution)}
           countryInfo3={similarCountry2.dencity_of_doctors}
+          countryImg={similarCountry2.img_link_country}
+          id={similarCountry2.id}
         />
       </section>
     </main>
