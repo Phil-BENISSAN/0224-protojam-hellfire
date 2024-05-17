@@ -26,7 +26,7 @@ const CountryCard = ({
       }}
     >
       <Link
-        to="countries/:country"
+        to="/countries/:country"
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
         <label htmlFor="info1">Hapiness level :</label>

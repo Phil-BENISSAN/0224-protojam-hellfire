@@ -8,7 +8,7 @@ export function Navbar({ location }) {
     <nav>
       <Link to={"https://senior-sanctuary.webflow.io/"} className="navLogo">
         <img
-          src="./src/assets/images/256logo.svg"
+          src="../src/assets/images/256logo.svg"
           alt="Logo Senior Sanctuary"
         />
       </Link>
