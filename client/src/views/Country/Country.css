@@ -31,7 +31,7 @@
 .countryHeader > img {
   object-fit: cover;
   object-position: 50% 50%;
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
 .dataCardSection {
@@ -71,6 +71,7 @@
 
 .dataList > li > label {
   font-size: 1.2rem;
+  white-space: nowrap;
 }
 
 .dataList > li > progress {
