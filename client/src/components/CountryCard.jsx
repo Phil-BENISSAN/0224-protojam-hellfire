@@ -7,6 +7,7 @@ const CountryCard = ({
   countryInfo1,
   countryInfo2,
   countryInfo3,
+  countryImg,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -18,17 +19,26 @@ const CountryCard = ({
       className="countryCard"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      style={{
+        backgroundImage: `linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 45%,
+          rgba(0, 0, 0, 1) 100%
+        ), url(${countryImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       <Link
         to="countries/:country"
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
-        <label htmlFor="info1">{countryInfo1} :</label>
-        <progress id="info1" max="5" value="1" />
-        <label htmlFor="info2">{countryInfo2} :</label>
-        <progress id="info2" max="5" value="2.5" />
-        <label htmlFor="info3">{countryInfo3} :</label>
-        <progress id="info3" max="5" value="4" />
+        <label htmlFor="info1">Hapiness level :</label>
+        <progress id="info1" max="10" value={countryInfo1} />
+        <label htmlFor="info2">Health care acces :</label>
+        <progress id="info2" max="100" value={countryInfo2} />
+        <label htmlFor="info3">Air quality :</label>
+        <progress id="info3" max="5" value={countryInfo3} />
         <p className="hoverInfo">Tap to open</p>
       </Link>
       <h2 className="countryTitle">{countryName}</h2>

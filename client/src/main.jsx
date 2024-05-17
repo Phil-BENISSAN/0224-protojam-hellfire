@@ -5,9 +5,18 @@ import App from "./App.jsx";
 import "./index.css";
 import { AllCountries } from "./views/AllCountries/AllCountries.jsx";
 import { Country } from "./views/Country/Country.jsx";
+import countries from "./data.json";
 
-const getData = () => {
-  return { datatest: "test" };
+const getCountries = () => {
+  return countries;
+};
+
+const getCountryById = (id) => {
+  for (let country of countries) {
+    if (country.id === id) {
+      return country;
+    }
+  }
 };
 
 const router = createBrowserRouter([
@@ -18,11 +27,12 @@ const router = createBrowserRouter([
       {
         path: "/countries",
         element: <AllCountries />,
+        loader: () => getCountries(),
       },
       {
-        path: "/country",
+        path: "/countries/:country",
         element: <Country />,
-        loader: () => getData(),
+        loader: ({ params }) => getCountryById(params.id),
       },
     ],
   },
