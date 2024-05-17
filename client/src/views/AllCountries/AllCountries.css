@@ -3,15 +3,13 @@ body {
   color: var(--lightText);
 }
 
-.AllCountriesMain {
-  width: 100%;
+.countryCardMain {
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
   padding: 7rem 1rem 3rem 1rem;
   gap: 2rem;
 }
-
 .countryCard {
   display: flex;
   justify-content: center;
@@ -52,13 +50,11 @@ body {
   color: var(--lightText);
   cursor: pointer;
 }
-
 label {
   width: 35%;
   text-align: center;
   margin-top: 1.5rem;
 }
-
 progress {
   width: 60%;
   height: auto;
@@ -78,22 +74,23 @@ progress {
   }
 }
 
-.hoverInfo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+button {
   margin: 0 auto 0 auto;
   width: 10rem;
   height: 2.5rem;
   background-color: #287d48;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: larger;
   color: var(--lightText);
 }
 
+button:hover {
+  background-color: #44612d;
+}
+
 @media screen and (min-width: 768px) {
-  .AllCountriesMain {
+  .countryCardMain {
     grid-template-columns: repeat(2, 1fr);
     padding: 8rem 2rem 3rem 2rem;
   }
@@ -104,15 +101,15 @@ progress {
 }
 
 @media screen and (min-width: 1280px) {
-  .AllCountriesMain {
+  .countryCardMain {
     grid-template-columns: repeat(3, 1fr);
     padding: 8rem 3rem 3rem 3rem;
   }
-
   .countryCard {
     height: 20rem;
   }
 }
+
 
 main{
   padding-top: 6rem;
