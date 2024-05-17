@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./CountryCard.css";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const CountryCard = ({
   countryName,
