@@ -1,13 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/Navbar/Navbar";
+import React from "react";
 
 function App() {
+  const location = useLocation().pathname;
+
   return (
     <>
-      <p>test</p>
-      <Navbar />
-      <Outlet/>
+      <Navbar location={location} />
+      <Outlet />
     </>
   );
 }

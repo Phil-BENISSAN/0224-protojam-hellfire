@@ -1,0 +1,164 @@
+.countryMain {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding: 6.5rem 1rem 3rem 1rem;
+  gap: 1rem;
+}
+
+.countryHeader {
+  position: relative;
+  margin: auto;
+  background-color: black;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  height: 90%;
+}
+
+.countryHeader > h1 {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  font-weight: bold;
+  font-size: 2.5rem;
+  width: 40%;
+  text-align: center;
+}
+
+.countryHeader > img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: 0.65;
+}
+
+.dataCardSection {
+  padding: 1rem;
+  margin: auto;
+  background-color: var(--secondaryColor);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 90%;
+}
+
+.dataCardSection > h2 {
+  font-size: 1.7rem;
+}
+
+.dataList {
+  width: 100%;
+  list-style-type: none;
+  list-style: none;
+}
+
+.dataList > li {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dataList > li > label {
+  font-size: 1.2rem;
+}
+
+.dataList > li > progress {
+  width: 60%;
+  height: 3rem;
+}
+
+.descriptionSection {
+  width: 100%;
+  grid-column: 1/-1;
+}
+
+.descriptionSection > p {
+  color: var(--darkText);
+  line-height: 160%;
+}
+
+.similarCountrySection {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.similarCountrySection > article {
+  width: 80%;
+  grid-column: 1/-1;
+  margin: auto;
+  position: relative;
+  background-color: black;
+  background-image: url("./src/assets/images/backgroundmontain.webp");
+}
+
+.similarCountrySection > article > h2 {
+  position: absolute;
+  font-weight: bold;
+  top: 50%;
+  left: 40%;
+  width: 20%;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .countryMain {
+    grid-template-columns: 1fr 1fr;
+    padding: 7rem 2rem 3rem 2em;
+    gap: 1.5rem;
+  }
+
+  .countryHeader > h1 {
+    grid-column: 1/2;
+    font-size: 4rem;
+  }
+
+  .dataCardSection {
+    grid-column: 2 /3;
+    padding: 1rem;
+  }
+
+  .dataCardSection > h2 {
+    font-size: 2rem;
+  }
+
+  .descriptionSection > p {
+    font-size: 1.5rem;
+  }
+
+  .similarCountrySection {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .similarCountrySection > article {
+    width: 60%;
+  }
+
+  .similarCountrySection > article:first-of-type {
+    grid-column: 1/2;
+  }
+
+  .similarCountrySection > article:last-of-type {
+    grid-column: 2/3;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .countryMain {
+    padding: 8rem 3rem 3rem 3rem;
+    gap: 2rem;
+  }
+
+  .dataCardSection {
+    padding: 2rem;
+  }
+}
