@@ -20,7 +20,7 @@ const CountryCard = ({
       onMouseLeave={handleMouseLeave}
     >
       <Link
-        to="countries/:country"
+        to="/countries/:country"
         className={isHovered ? "countryInfoVisible" : "countryInfoHidden"}
       >
         <label htmlFor="info1">{countryInfo1} :</label>
