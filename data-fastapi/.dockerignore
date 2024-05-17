@@ -1,8 +1,0 @@
-# Ignorer les fichiers et répertoires spécifiques
-*secret*  
-.git 
-*.log  
-# Ignorer tous les fichiers d'un type spécifique 
-*.tmp  
-# Ignorer tous les fichiers dans un répertoire spécifique 
-logs/
