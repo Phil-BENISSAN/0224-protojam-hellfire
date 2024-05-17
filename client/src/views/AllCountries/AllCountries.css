@@ -50,12 +50,14 @@ body {
   color: var(--lightText);
   cursor: pointer;
 }
-label {
+
+article label {
   width: 35%;
   text-align: center;
   margin-top: 1.5rem;
 }
-progress {
+
+article progress {
   width: 60%;
   height: auto;
   margin-left: 0.4rem;
