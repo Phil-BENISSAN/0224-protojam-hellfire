@@ -1,10 +1,39 @@
-import { useLoaderData } from "react-router-dom";
+import React, { useState } from "react";
 import CountryCard from "../../components/CountryCard";
+import data from "../../data.json";
 import "./AllCountries.css";
-import React from "react";
 
 export function AllCountries() {
-  const { country } = useLoaderData();
+  const [search, setSearch] = useState("");
+
+  let filteredCountries = data.filter((country) =>
+    country.country.toLowerCase().includes(search)).sort((a, b) => parseInt(b.hapiness_index) - parseInt(a.hapiness_index))
+
+  const [sortCriteria, setSortCriteria] = useState("indice-bonheur");
+
+  const sortedCountries = filteredCountries.sort((a, b) => {
+    switch (sortCriteria) {
+      case "indice-bonheur":
+        return b.hapiness_index - a.hapiness_index;
+      case "air-quality":
+        return b.cost_of_living - a.cost_of_living;
+      case "acces-sante":
+        return b.average_temperature - a.average_temperature;
+      default:
+        return a.country.localeCompare(b.country);
+    }
+  });
+
+  let mapAirPollution = (level) => {
+    const levels = {
+      "very low": 5,
+      low: 4,
+      medium: 3,
+      high: 2,
+      "very high": 1,
+    };
+    return levels[level] || 0;
+  };
 
   return (
     <>
@@ -18,38 +47,36 @@ export function AllCountries() {
               type="text"
               id="search-bar"
               placeholder="Rechercher un pays..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </section>
           <section className="filtre">
             <label htmlFor="filtre">Trier par :</label>
-            <select id="filtre" name="filtre-options">
-              <option value="indice-bonheur">Indice de bonheur</option>
-              <option value="cout-vie">Coût de la vie</option>
-              <option value="acces-sante">Accès à la santé</option>
-              <option value="temperature">Temperature moyenne</option>
-              <option value="alphabetique">Alphabétique A-Z</option>
+            <select
+              id="filtre"
+              name="filtre-options"
+              value={sortCriteria}
+              onChange={(e) => setSortCriteria(e.target.value)}
+            >
+              <option value="indice-bonheur">Hapiness level</option>
+              <option value="acces-sante">Health care acces</option>
+              <option value="air-quality">Air quality</option>
+              <option value="alphabetique">Alphabetical A-Z</option>
             </select>
           </section>
         </section>
         <section className="countryCardMain">
-          <CountryCard
-            countryName="COUNTRY_NAME1"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
-          />
-          <CountryCard
-            countryName="COUNTRY_NAME2"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
-          />
-          <CountryCard
-            countryName="COUNTRY_NAME3"
-            countryInfo1="country_info1"
-            countryInfo2="country_info2"
-            countryInfo3="country_info3"
-          />
+        {filteredCountries.map((data) => (
+            <CountryCard
+              key={data.id}
+              countryName={data.country}
+              countryInfo1={data.hapiness_index}
+              countryInfo2={data.dencity_of_doctors}
+              countryInfo3={mapAirPollution(data.air_polution)}
+              countryImg={data.img_link_country}
+            />
+          ))}
         </section>
       </main>
     </>

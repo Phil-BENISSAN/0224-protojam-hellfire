@@ -11,6 +11,14 @@ const getCountries = () => {
   return countries;
 };
 
+const getCountryById = (id) => {
+  for (let country of countries) {
+    if (country.id === id) {
+      return country;
+    }
+  }
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,9 +30,9 @@ const router = createBrowserRouter([
         loader: () => getCountries(),
       },
       {
-        path: "/countries/:countryId",
+        path: "/countries/:country",
         element: <Country />,
-        loader: () => getCountries(),
+        loader: ({ params }) => getCountryById(params.id),
       },
     ],
   },
