@@ -22,23 +22,21 @@ export function Country() {
         <h1>{name}France</h1>
       </header>
       <section className="dataCardSection">
-        <div className="dataCard">
-          <h2>Country Information</h2>
-          <ul>
-            <li>
-              <label htmlFor="info1">{countryInfo1}Value :</label>
-              <progress id="info1" max="5" value="1" />
-            </li>
-            <li>
-              <label htmlFor="info2">{countryInfo2}Value :</label>
-              <progress id="info2" max="5" value="3" />
-            </li>
-            <li>
-              <label htmlFor="info3">{countryInfo3}Value :</label>
-              <progress id="info3" max="5" value="2.5" />
-            </li>
-          </ul>
-        </div>
+        <h2>Country Information</h2>
+        <ul className="dataList">
+          <li>
+            <label htmlFor="info1">{countryInfo1}Value :</label>
+            <progress id="info1" max="5" value="1" />
+          </li>
+          <li>
+            <label htmlFor="info2">{countryInfo2}Value :</label>
+            <progress id="info2" max="5" value="3" />
+          </li>
+          <li>
+            <label htmlFor="info3">{countryInfo3}Value :</label>
+            <progress id="info3" max="5" value="2.5" />
+          </li>
+        </ul>
       </section>
       <section className="descriptionSection">
         <p>
